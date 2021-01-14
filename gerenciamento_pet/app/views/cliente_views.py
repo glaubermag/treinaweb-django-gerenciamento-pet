@@ -17,17 +17,15 @@ def cadastrar_cliente(request):
             data_nascimento = form_cliente.cleaned_data["data_nascimento"]
             profissao = form_cliente.cleaned_data["profissao"]
             if form_endereco.is_valid():
-                rua = form_cliente.cleaned_data["rua"]
-                cidade = form_cliente.cleaned_data["cidade"]
-                estado = form_cliente.cleaned_data["estado"]
-                endereco_novo = endereco.Endereco(rua=rua, cidade = cidade, estado = estado)
-                endereco_db = endereco_service.cadastrar_endereco(endereco_novo)
+                rua = form_endereco.cleaned_data["rua"]
+                cidade = form_endereco.cleaned_data["cidade"]
+                estado = form_endereco.cleaned_data["estado"]
+                endereco_novo = endereco.Endereco(rua=rua, cidade=cidade, estado=estado)
+                endereco_bd = endereco_service.cadastrar_endereco(endereco_novo)
                 cliente_novo = cliente.Cliente(nome=nome, email=email, data_nascimento=data_nascimento,
-                                           profissao = profissao, cpf = cpf, endereco=endereco_db)
+                                           profissao=profissao, cpf=cpf, endereco=endereco_bd)
                 cliente_service.cadastrar_cliente(cliente_novo)
-
     else:
         form_cliente = ClienteForm()
         form_endereco = EnderecoClienteForm()
-
-    return render(request, 'clientes/form_cliente.html', {'form_cliente':form_cliente, 'form_endereco': form_endereco })
+    return render(request, 'clientes/form_cliente.html', {'form_cliente': form_cliente, 'form_endereco': form_endereco})

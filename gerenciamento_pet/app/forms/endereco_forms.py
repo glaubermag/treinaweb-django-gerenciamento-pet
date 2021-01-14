@@ -1,5 +1,5 @@
 from django import forms
-from ..models import EnderecoClienteCliente
+from ..models import EnderecoCliente
 
 
 class EnderecoClienteForm(forms.ModelForm):

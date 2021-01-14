@@ -4,50 +4,26 @@ class Endereco():
         self.__cidade = cidade
         self.__estado = estado
 
+    @property
+    def rua(self):
+        return self.__rua
 
+    @rua.setter
+    def rua(self, rua):
+        self.__rua = rua
 
-        @property
-        def nome(self):
-            return self.__nome
-        @nome.setter
-        def nome(self, nome):
-            self.__nome = nome
+    @property
+    def cidade(self):
+        return self.__cidade
 
-        @property
-        def email(self):
-            return self.email
-        @email.setter
-        def nome(self, email):
-            self.email = email
+    @cidade.setter
+    def cidade(self, cidade):
+        self.__cidade = cidade
 
-            @property
-            def cpf(self):
-                return self.cpf
+    @property
+    def estado(self):
+        return self.__estado
 
-            @cpf.setter
-            def cpf(self, cpf):
-                self.cpf = cpf
-
-                @property
-                def data_nascimento(self):
-                    return self.data_nascimento
-
-                @data_nascimento.setter
-                def data_nascimento(self, data_nascimento):
-                    self.data_nascimento = data_nascimento
-
-        @property
-        def profissao(self):
-            return self.profissao
-
-        @profissao.setter
-        def profissao(self, profissao):
-            self.profissao = profissao
-
-        @property
-        def endereco(self):
-            return self.endereco
-
-        @profissao.setter
-        def endereco(self, endereco):
-            self.endereco = endereco
+    @estado.setter
+    def estado(self, estado):
+        self.__estado = estado
