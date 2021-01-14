@@ -1,2 +1,2 @@
-# treinaweb-django-gerenciamento-pet
+# Projeto Prático - Sistema de gerenciamento clínicas PET com Django
  
